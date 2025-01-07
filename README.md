@@ -38,7 +38,7 @@ Este projeto foi desenvolvido com o objetivo de criar uma aplicação robusta pa
 1.  Clone o repositório:
 
     ```bash
-    git clone [URL inválido removido]
+    git clone (https://github.com/RangelMRK/screenmusic.git)
     ```
 
 2.  Navegue até o diretório do projeto:
