@@ -22,9 +22,6 @@ public class ArtistaDTO {
         public Tags tags;
 
 
-        @JsonProperty("bio")
-        public Bio bio;
-
         @JsonIgnoreProperties(ignoreUnknown = true)
         public static class Stats {
             @JsonProperty("listeners")
@@ -46,10 +43,5 @@ public class ArtistaDTO {
             public String genero;
         }
 
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Bio {
-            @JsonProperty("summary")
-            public String summary;
-        }
     }
 }

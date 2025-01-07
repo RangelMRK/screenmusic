@@ -11,6 +11,5 @@ public record DadosMusica(@JsonAlias("name") String nome,
                           @JsonAlias("duration") Double duracao,
                           @JsonAlias("listeners") Integer ouvintes,
                           @JsonAlias("playcount") Integer reproducoes,
-                          List<String> generos,
-                          @JsonProperty("summary") String resumo) {
+                          List<String> generos) {
 }

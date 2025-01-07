@@ -24,10 +24,6 @@ public class MusicaDTO {
         @JsonProperty("playcount")
         public String playcount;
 
-        @JsonProperty("wiki")
-        public Wiki wiki;
-
-
 
         @JsonProperty("toptags")
         public Tags tags;
@@ -44,11 +40,7 @@ public class MusicaDTO {
             @JsonProperty("name")
             public String generos;
         }
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Wiki {
-            @JsonProperty("summary")
-            public String summary;
-        }
+
     }
 }
 

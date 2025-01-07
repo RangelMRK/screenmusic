@@ -22,10 +22,8 @@ public class Musica {
 
     private List<String> generos;
 
-    private String resumo;
-
     @ManyToOne
-    @JoinColumn(name = "artista_id")
+    @JoinColumn(name = "artista_id", nullable = false)
     private Artista artista;
 
     public Musica() {}
@@ -36,7 +34,6 @@ public class Musica {
         this.ouvintes = dadosMusica.ouvintes();
         this.reproducoes = dadosMusica.reproducoes();
         this.generos = dadosMusica.generos();
-        this.resumo = dadosMusica.resumo();
     }
 
     public Long getId() {
@@ -83,18 +80,6 @@ public class Musica {
         return generos;
     }
 
-    public void setGeneros(List generos) {
-        this.generos = generos;
-    }
-
-    public String getResumo() {
-        return resumo;
-    }
-
-    public void setResumo(String resumo) {
-        this.resumo = resumo;
-    }
-
     public Artista getArtista() {
         return artista;
     }
@@ -109,8 +94,7 @@ public class Musica {
                 "| Duração = " + duracao +
                 "| Ouvintes = " + ouvintes +
                 "| Reproduções = " + reproducoes +
-                "| Gêneros: " + String.join(", ", generos) +
-                "| Resumo da Wiki = '" + resumo + '\'';
+                "| Gêneros: " + String.join(", ", generos);
     }
 }
 

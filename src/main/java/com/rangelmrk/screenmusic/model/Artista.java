@@ -18,10 +18,9 @@ public class Artista {
     private Integer ouvintes;
     private Integer reproducoes;
     private List<String> generos;
-    private String resumo;
 
 
-    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Musica> musicas = new ArrayList<>();
 
     public Artista(){}
@@ -32,7 +31,6 @@ public class Artista {
         this.ouvintes = dadosArtista.ouvintes();
         this.reproducoes = dadosArtista.reproducoes();
         this.generos = dadosArtista.generos();
-        this.resumo = dadosArtista.resumo();
     }
 
     public Long getId() {
@@ -82,14 +80,6 @@ public class Artista {
         this.generos = generos;
     }
 
-    public String getResumo() {
-        return resumo;
-    }
-
-    public void setResumo(String resumo) {
-        this.resumo = resumo;
-    }
-
     public List<Musica> getMusicas() {
         return musicas;
     }
@@ -106,7 +96,6 @@ public class Artista {
                 "| Ouvintes: " + ouvintes +
                 "| Reproduções: " + reproducoes +
                 "| Gêneros: " + String.join(", ", generos) +
-                "| Resumo da Bio = '" + resumo + '\'' +
                 "| Músicas = " + musicas;
     }
 }
